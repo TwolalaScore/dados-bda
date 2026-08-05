@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: batalha-da-aldeia
+    runtime: node
+    plan: free
+    buildCommand: "echo 'sem dependencias, nada para instalar'"
+    startCommand: "node server/index.js"
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
