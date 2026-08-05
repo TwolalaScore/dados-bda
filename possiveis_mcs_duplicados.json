@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batalha da Aldeia — Estatísticas</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div id="login-screen" class="login-screen hidden">
+  <div class="login-box">
+    <h1>🏆 Batalha da Aldeia</h1>
+    <p class="subtitle">Banco de dados oficial de MCs, edições e confrontos</p>
+    <form id="login-form">
+      <label>Usuário</label>
+      <input type="text" id="login-username" autocomplete="username" required>
+      <label>Senha</label>
+      <input type="password" id="login-password" autocomplete="current-password" required>
+      <button type="submit">Entrar</button>
+      <div id="login-error" class="error hidden"></div>
+    </form>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <header class="topbar">
+    <div class="brand">🏆 Batalha da Aldeia</div>
+    <nav id="tabs" class="tabs">
+      <button data-tab="mcs" class="tab-btn active">MCs</button>
+      <button data-tab="confrontos" class="tab-btn">Confrontos</button>
+      <button data-tab="aniversarios" class="tab-btn">Aniversários</button>
+      <button data-tab="edicoes" class="tab-btn">Edições</button>
+      <button data-tab="admin" class="tab-btn admin-only hidden">Admin</button>
+    </nav>
+    <div class="user-box">
+      <span id="user-name"></span>
+      <button id="logout-btn">Sair</button>
+    </div>
+  </header>
+
+  <main id="main-content"></main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

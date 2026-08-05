@@ -1,0 +1,155 @@
+:root {
+  --bg: #14120f;
+  --bg-alt: #1c1914;
+  --card: #221e18;
+  --border: #3a3327;
+  --amber: #e0a730;
+  --amber-dim: #b8862099;
+  --green: #6fae4e;
+  --red: #c0564b;
+  --text: #f0e9db;
+  --text-dim: #b6ac97;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, #0f0d0a 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+.hidden { display: none !important; }
+
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.login-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+.login-box h1 { margin: 0 0 4px; font-size: 24px; color: var(--amber); }
+.subtitle { color: var(--text-dim); font-size: 13px; margin-bottom: 24px; }
+.login-box form { text-align: left; display: flex; flex-direction: column; gap: 6px; }
+.login-box label { font-size: 13px; color: var(--text-dim); margin-top: 8px; }
+.login-box input {
+  background: var(--bg-alt); border: 1px solid var(--border); color: var(--text);
+  padding: 10px 12px; border-radius: 8px; font-size: 14px;
+}
+.login-box button {
+  margin-top: 18px; background: var(--amber); color: #201a0c; border: none;
+  padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 15px;
+}
+.login-box button:hover { filter: brightness(1.1); }
+.error { color: var(--red); font-size: 13px; margin-top: 10px; }
+
+.topbar {
+  display: flex; align-items: center; gap: 24px;
+  padding: 14px 24px; background: var(--bg-alt); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10; flex-wrap: wrap;
+}
+.brand { font-weight: 800; color: var(--amber); font-size: 18px; white-space: nowrap; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+.tab-btn {
+  background: transparent; border: 1px solid transparent; color: var(--text-dim);
+  padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;
+}
+.tab-btn:hover { color: var(--text); background: #2a251c; }
+.tab-btn.active { color: #201a0c; background: var(--amber); }
+.user-box { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-dim); }
+.user-box button {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  padding: 6px 12px; border-radius: 6px; cursor: pointer;
+}
+
+main { padding: 24px; max-width: 1200px; margin: 0 auto; }
+
+h2 { color: var(--amber); margin-top: 0; }
+.panel {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px; margin-bottom: 20px;
+}
+
+input.search {
+  width: 100%; max-width: 340px; background: var(--bg-alt); border: 1px solid var(--border);
+  color: var(--text); padding: 10px 12px; border-radius: 8px; margin-bottom: 16px; font-size: 14px;
+}
+select {
+  background: var(--bg-alt); border: 1px solid var(--border); color: var(--text);
+  padding: 10px 12px; border-radius: 8px; font-size: 14px;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--text-dim); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }
+tr.clickable { cursor: pointer; }
+tr.clickable:hover { background: #2a2419; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700;
+}
+.badge.normal { background: #33301f; color: var(--text-dim); }
+.badge.aniversario { background: #4a3720; color: var(--amber); }
+.badge.aldeia_cup { background: #223a2c; color: var(--green); }
+
+.stat-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px;
+}
+.stat-card {
+  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 14px;
+}
+.stat-card .value { font-size: 26px; font-weight: 800; color: var(--amber); }
+.stat-card .label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+
+.back-link { color: var(--amber); cursor: pointer; font-size: 13px; display: inline-block; margin-bottom: 12px; }
+.back-link:hover { text-decoration: underline; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } .topbar { flex-direction: column; align-items: flex-start; } }
+
+.form-row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; align-items: center; }
+.form-row label { font-size: 13px; color: var(--text-dim); min-width: 110px; }
+.form-row input, .form-row select {
+  background: var(--bg-alt); border: 1px solid var(--border); color: var(--text);
+  padding: 8px 10px; border-radius: 6px; font-size: 14px; flex: 1; min-width: 150px;
+}
+button.primary {
+  background: var(--amber); color: #201a0c; border: none; padding: 10px 18px;
+  border-radius: 8px; font-weight: 700; cursor: pointer;
+}
+button.secondary {
+  background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); padding: 8px 14px;
+  border-radius: 8px; cursor: pointer;
+}
+button.danger {
+  background: #3a1e1a; color: var(--red); border: 1px solid var(--red); padding: 6px 12px;
+  border-radius: 6px; cursor: pointer; font-size: 12px;
+}
+
+.phase-block {
+  border: 1px dashed var(--border); border-radius: 10px; padding: 12px; margin-bottom: 14px;
+}
+.phase-block-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.confronto-row {
+  display: grid; grid-template-columns: 2fr 70px 30px 70px 2fr 90px 30px; gap: 8px; align-items: center;
+  margin-bottom: 6px;
+}
+.confronto-row input { width: 100%; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); padding: 6px 8px; border-radius: 6px; }
+.vs-label { text-align: center; color: var(--text-dim); font-weight: 700; }
+
+.small { font-size: 12px; color: var(--text-dim); }
+.win-rate-bar {
+  height: 6px; background: var(--bg); border-radius: 4px; overflow: hidden; margin-top: 4px;
+}
+.win-rate-bar > div { height: 100%; background: var(--green); }
+.toast {
+  position: fixed; bottom: 20px; right: 20px; background: var(--card); border: 1px solid var(--amber);
+  color: var(--text); padding: 12px 18px; border-radius: 8px; z-index: 100;
+}
